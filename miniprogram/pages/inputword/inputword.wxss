@@ -1,0 +1,391 @@
+page {
+  background-color: #f7f8fa;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40rpx 30rpx;
+}
+
+.title-wrapper {
+  text-align: center;
+  margin-bottom: 60rpx;
+}
+
+.logo {
+  width: 150rpx;
+  height: 150rpx;
+  margin-bottom: 20rpx;
+}
+
+.title {
+  font-size: 48rpx;
+  font-weight: bold;
+  color: #333;
+}
+
+.subtitle {
+  font-size: 28rpx;
+  color: #888;
+  margin-top: 10rpx;
+}
+
+.form-wrapper {
+  width: 100%;
+  background-color: #fff;
+  border-radius: 20rpx;
+  padding: 20rpx 30rpx;
+  box-shadow: 0 4rpx 20rpx rgba(0, 0, 0, 0.05);
+}
+
+.input-group {
+  width: 100%;
+  margin-bottom: 30rpx;
+}
+
+.input-group:last-child {
+  margin-bottom: 10rpx;
+}
+
+.word-input {
+  width: 100%;
+  height: 90rpx;
+  border: 1rpx solid #ddd;
+  border-radius: 12rpx;
+  padding: 0 20rpx;
+  font-size: 32rpx;
+  box-sizing: border-box; /* 确保 padding 不会撑大宽度 */
+  transition: all 0.2s ease-in-out;
+}
+
+.word-input:focus {
+  border-color: #07c160;
+  box-shadow: 0 0 10rpx rgba(7, 193, 96, 0.2);
+}
+
+.input-error {
+  border-color: #fa5151;
+}
+
+.result-text {
+  font-size: 26rpx;
+  margin-top: 10rpx;
+  padding-left: 10rpx;
+}
+
+.translation {
+  color: #07c160;
+}
+
+.error {
+  color: #fa5151;
+}
+
+.button-wrapper {
+  width: 100%;
+  margin-top: 60rpx;
+}
+
+.generate-btn {
+  width: 100%;
+  background-color: #07c160;
+  color: #fff;
+  font-size: 34rpx;
+  font-weight: bold;
+  border-radius: 12rpx;
+  transition: background-color 0.3s;
+}
+
+.generate-btn[disabled] {
+  background-color: #a0e6c3;
+  color: #e8f9f1;
+}
+/* 词典状态样式 */
+.dictionary-status {
+  margin-top: 20rpx;
+  padding: 10rpx 20rpx;
+  border-radius: 20rpx;
+  background-color: #fff3cd;
+  border: 1rpx solid #ffeaa7;
+}
+
+.dictionary-status.success {
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+}
+
+.status-text {
+  font-size: 24rpx;
+  color: #856404;
+}
+
+.dictionary-status.success .status-text {
+  color: #155724;
+}
+
+/* 答题区域样式 */
+.result-container {
+  width: 100%;
+  margin-top: 40rpx;
+}
+
+.article-wrapper {
+  background-color: #fff;
+  border-radius: 20rpx;
+  padding: 30rpx;
+  margin-bottom: 30rpx;
+  box-shadow: 0 4rpx 20rpx rgba(0, 0, 0, 0.05);
+}
+
+.article-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.article-title {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #333;
+}
+
+.difficulty-badge {
+  background-color: #07c160;
+  color: white;
+  padding: 8rpx 16rpx;
+  border-radius: 20rpx;
+  font-size: 24rpx;
+  font-weight: bold;
+}
+
+.article-content {
+  font-size: 30rpx;
+  line-height: 1.6;
+  color: #555;
+  text-align: justify;
+}
+
+.questions-wrapper {
+  background-color: #fff;
+  border-radius: 20rpx;
+  padding: 30rpx;
+  margin-bottom: 30rpx;
+  box-shadow: 0 4rpx 20rpx rgba(0, 0, 0, 0.05);
+}
+
+.questions-title {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 30rpx;
+  text-align: center;
+}
+
+.question-item {
+  margin-bottom: 40rpx;
+  padding-bottom: 30rpx;
+  border-bottom: 1rpx solid #f0f0f0;
+}
+
+.question-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.question-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15rpx;
+}
+
+.question-number {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #07c160;
+}
+
+.question-status {
+  display: flex;
+  align-items: center;
+}
+
+.status-icon {
+  font-size: 32rpx;
+  font-weight: bold;
+}
+
+.status-icon.correct {
+  color: #07c160;
+}
+
+.status-icon.incorrect {
+  color: #fa5151;
+}
+
+.question-text {
+  font-size: 32rpx;
+  color: #333;
+  margin-bottom: 20rpx;
+  line-height: 1.5;
+}
+
+.options-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 15rpx;
+}
+
+.option-item {
+  display: flex;
+  align-items: center;
+  padding: 20rpx;
+  border: 2rpx solid #e0e0e0;
+  border-radius: 12rpx;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.option-item.selected {
+  border-color: #07c160;
+  background-color: #f0f9f4;
+}
+
+.option-item.correct-answer {
+  border-color: #07c160;
+  background-color: #e8f5e8;
+}
+
+.option-item.wrong-answer {
+  border-color: #fa5151;
+  background-color: #fef0f0;
+}
+
+.option-label {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  background-color: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #666;
+  margin-right: 20rpx;
+  flex-shrink: 0;
+}
+
+.option-item.selected .option-label {
+  background-color: #07c160;
+  color: #fff;
+}
+
+.option-item.correct-answer .option-label {
+  background-color: #07c160;
+  color: #fff;
+}
+
+.option-item.wrong-answer .option-label {
+  background-color: #fa5151;
+  color: #fff;
+}
+
+.option-text {
+  flex: 1;
+  font-size: 30rpx;
+  color: #333;
+  line-height: 1.4;
+}
+
+.option-indicator {
+  position: absolute;
+  right: 20rpx;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.correct-mark {
+  font-size: 32rpx;
+  color: #07c160;
+  font-weight: bold;
+}
+
+.explanation {
+  margin-top: 25rpx;
+  padding: 20rpx;
+  background-color: #f8f9fa;
+  border-radius: 12rpx;
+  border-left: 4rpx solid #07c160;
+}
+
+.explanation-title {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #07c160;
+  margin-bottom: 10rpx;
+}
+
+.explanation-text {
+  font-size: 28rpx;
+  color: #666;
+  line-height: 1.5;
+}
+
+.action-buttons {
+  width: 100%;
+  padding: 0 30rpx;
+}
+
+.submit-btn {
+  width: 100%;
+  background-color: #07c160;
+  color: #fff;
+  font-size: 34rpx;
+  font-weight: bold;
+  border-radius: 12rpx;
+  padding: 25rpx 0;
+}
+
+.submit-btn[disabled] {
+  background-color: #a0e6c3;
+  color: #e8f9f1;
+}
+
+.result-summary {
+  text-align: center;
+}
+
+.score-display {
+  margin-bottom: 30rpx;
+  padding: 30rpx;
+  background-color: #fff;
+  border-radius: 20rpx;
+  box-shadow: 0 4rpx 20rpx rgba(0, 0, 0, 0.05);
+}
+
+.score-text {
+  font-size: 48rpx;
+  font-weight: bold;
+  color: #07c160;
+}
+
+.score-percentage {
+  font-size: 32rpx;
+  color: #666;
+  margin-left: 20rpx;
+}
+
+.restart-btn {
+  width: 100%;
+  background-color: #1890ff;
+  color: #fff;
+  font-size: 34rpx;
+  font-weight: bold;
+  border-radius: 12rpx;
+  padding: 25rpx 0;
+}

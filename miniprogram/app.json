@@ -1,0 +1,14 @@
+{
+  "pages": [
+    "pages/inputword/inputword"
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "单词阅读理解",
+    "navigationBarBackgroundColor": "#07c160"
+  },
+  "style": "v2",
+  "componentFramework": "glass-easel",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}
