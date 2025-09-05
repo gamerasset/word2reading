@@ -10,7 +10,7 @@ API_CONFIGS = [
     {
         "base_url": "https://apis.iflow.cn/v1",  # 例如: "https://api.openai.com/v1"
         "api_key": "YOUR_API_KEY",        # 您的API密钥
-        "model": "YOUR_MODEL_NAME"        # 例如: "gpt-3.5-turbo"
+        "model": "qwen3-coder"        # 例如: "gpt-3.5-turbo"
     },
     # 可以配置多个API作为备选
     # {
