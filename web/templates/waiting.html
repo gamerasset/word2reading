@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}生成中 - 单词阅读理解生成器{% endblock %}
+
+{% block content %}
+<div class="waiting-container">
+    <div class="loading-animation">
+        <div class="spinner"></div>
+    </div>
+    <h2>🤖 AI正在生成阅读理解题...</h2>
+    <p class="loading-text">请稍候，这可能需要几秒钟时间</p>
+    <div class="progress-bar">
+        <div class="progress-fill"></div>
+    </div>
+    
+    <div class="word-list">
+        <h3>您输入的单词：</h3>
+        <div id="selected-words"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/waiting.js') }}"></script>
+{% endblock %}

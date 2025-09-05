@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block title %}输入单词 - 单词阅读理解生成器{% endblock %}
+
+{% block content %}
+<header>
+    <h1>🎯 单词阅读理解生成器</h1>
+    <p class="subtitle">输入3-5个单词，AI为您生成个性化阅读理解练习</p>
+    <div id="dictionary-status" class="status-indicator">
+        <span class="status-text">词典加载中...</span>
+    </div>
+</header>
+
+<main>
+    <div class="word-input-section">
+        <h2>📝 输入单词</h2>
+        <p class="instruction">请输入3-5个英语单词（必须在KET/PET词汇表中）</p>
+        
+        <div class="input-group">
+            <div class="word-input-item">
+                <input type="text" id="word1" placeholder="输入第1个单词" class="word-input" data-index="0">
+                <div class="word-status" id="status1"></div>
+            </div>
+            
+            <div class="word-input-item">
+                <input type="text" id="word2" placeholder="输入第2个单词" class="word-input" data-index="1">
+                <div class="word-status" id="status2"></div>
+            </div>
+            
+            <div class="word-input-item">
+                <input type="text" id="word3" placeholder="输入第3个单词" class="word-input" data-index="2">
+                <div class="word-status" id="status3"></div>
+            </div>
+            
+            <div class="word-input-item optional">
+                <input type="text" id="word4" placeholder="输入第4个单词 (可选)" class="word-input" data-index="3">
+                <div class="word-status" id="status4"></div>
+            </div>
+            
+            <div class="word-input-item optional">
+                <input type="text" id="word5" placeholder="输入第5个单词 (可选)" class="word-input" data-index="4">
+                <div class="word-status" id="status5"></div>
+            </div>
+        </div>
+        
+        <button id="generateBtn" class="generate-btn" disabled>
+            <span class="btn-text">生成阅读理解</span>
+            <span class="btn-loading" style="display: none;">生成中...</span>
+        </button>
+    </div>
+</main>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/dictionary.js') }}"></script>
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+{% endblock %}

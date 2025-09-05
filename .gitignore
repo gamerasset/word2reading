@@ -232,6 +232,13 @@ venv.bak/
 *temp*
 *backup*
 
+# 例外：保留配置模板文件和HTML模板目录
+!config_template.py
+!**/config_template.py
+!templates/
+!**/templates/
+!templates/**
+
 # ===================================
 # 云服务和部署相关
 # ===================================

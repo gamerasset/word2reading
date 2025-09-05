@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}答题 - 单词阅读理解生成器{% endblock %}
+
+{% block content %}
+<div class="quiz-container">
+    <!-- 文章区域 -->
+    <div class="article-section">
+        <h2>📖 阅读文章</h2>
+        <div id="article-content" class="article-content"></div>
+        <div id="article-level" class="level-badge"></div>
+    </div>
+
+    <!-- 题目区域 -->
+    <div class="questions-section">
+        <h2>📝 选择题</h2>
+        <div id="questions-container"></div>
+    </div>
+
+    <!-- 操作按钮 -->
+    <div class="action-buttons">
+        <button id="submit-btn" class="btn btn-success">提交答案</button>
+        <button id="restart-btn" class="btn btn-secondary" style="display: none;">重新开始</button>
+    </div>
+
+    <!-- 结果展示 -->
+    <div id="result-summary" class="result-summary" style="display: none;">
+        <div class="score-display">
+            <span class="score-text">得分：<span id="score">0</span>/<span id="total">5</span></span>
+            <span class="score-percentage">(<span id="percentage">0</span>%)</span>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/quiz.js') }}"></script>
+{% endblock %}
